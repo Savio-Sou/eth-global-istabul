@@ -1,6 +1,6 @@
 import { BarretenbergBackend } from "@noir-lang/backend_barretenberg";
 import { Noir } from "@noir-lang/noir_js";
-import circuit from "../target/simple_test.json" assert { type: "json"}
+import circuit from "../circuit/target/simple_test.json" assert { type: "json"}
 import * as fs from 'fs';
 
 const backend = new BarretenbergBackend(circuit);
@@ -14,12 +14,12 @@ async function main(inputs) {
         4
     );
     // console.log(proofAsFields);
-    console.dir('proofAsFields: ', proofAsFields, {'maxArrayLength': null})
     // console.log(vkAsFields)
-    console.dir('vkAsFields: ', vkAsFields, {'maxArrayLength': null})
     // console.log(vkHash)
+    console.dir('proofAsFields: ', proofAsFields, {'maxArrayLength': null})
+    console.dir('vkAsFields: ', vkAsFields, {'maxArrayLength': null})
     console.dir('vkHash: ', vkHash, {'maxArrayLength': null})
-    // fs.writeFile('../out/artifacts.json', 'proofAsFields: ', proofAsFields,'vkAsFields: ', vkAsFields, 'vkHash: ', vkHash);
+    //fs.writeFile(__dirname + '/out/artifacts.json', 'proofAsFields: ', proofAsFields,'vkAsFields: ', vkAsFields, 'vkHash: ', vkHash);
 }
 
 const inputs = {
