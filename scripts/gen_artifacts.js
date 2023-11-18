@@ -13,13 +13,18 @@ async function main(inputs) {
         proof,
         4
     );
-    // console.log(proofAsFields);
-    // console.log(vkAsFields)
-    // console.log(vkHash)
-    console.dir('proofAsFields: ', proofAsFields, {'maxArrayLength': null})
-    console.dir('vkAsFields: ', vkAsFields, {'maxArrayLength': null})
-    console.dir('vkHash: ', vkHash, {'maxArrayLength': null})
-    //fs.writeFile(__dirname + '/out/artifacts.json', 'proofAsFields: ', proofAsFields,'vkAsFields: ', vkAsFields, 'vkHash: ', vkHash);
+
+    let artifacts = {
+        'proofAsFields: ': proofAsFields,
+        'vkAsFields: ': vkAsFields,
+        'vkHash: ': vkHash
+    }
+
+    // Convert the artifacts to a JSON string
+    const jsonString = JSON.stringify(artifacts, null, 2);
+
+    // Write the JSON string to the file
+    fs.writeFileSync('./scripts/out/artifacts.json', jsonString);
 }
 
 const inputs = {
