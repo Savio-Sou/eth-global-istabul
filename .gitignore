@@ -38,6 +38,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# noir / bb
+crs
 
 # artifacts
 proofs
